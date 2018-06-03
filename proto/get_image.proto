@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package tutorial;
+
+message ClientRequest {
+  required string image_generator = 1;
+  optional int32 image_max_width = 2;
+  optional int32 image_max_height = 3;
+  optional bool image_gray = 4;
+}
+
+message ServerResponse {
+  required string image_file_name = 1;
+  required bytes image_byte = 2;
+}
+
