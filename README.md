@@ -1,5 +1,8 @@
 # Websocket example
 
+## Requirements
+Python 3
+
 ## Server
 ### Installation
 ```
