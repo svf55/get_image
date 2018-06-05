@@ -23,18 +23,18 @@ class TestGenerators(unittest.TestCase):
         file_name = os.path.join(BASE_DIR, 'images/pic.jpg')
         max_width = 200
         max_height = 100
-        image = gen_image_from_file(file_name, max_width=max_width, max_height=max_height)
+        image = gen_image_from_file(file_name, image_max_width=max_width, image_max_height=max_height)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.width <= max_width)
         self.assertTrue(image.height <= max_height)
 
         max_width = 200
-        image = gen_image_from_file(file_name, max_width=max_width)
+        image = gen_image_from_file(file_name, image_max_width=max_width)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.width <= max_width)
 
         max_height = 150
-        image = gen_image_from_file(file_name, max_height=max_height)
+        image = gen_image_from_file(file_name, image_max_height=max_height)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.height <= max_height)
 
@@ -44,18 +44,18 @@ class TestGenerators(unittest.TestCase):
     def test_gen_image_from_pil(self):
         width = 200
         height = 200
-        image = gen_image_pil(width=width, height=height)
+        image = gen_image_pil(image_max_width=width, image_max_height=height)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.width == width)
         self.assertTrue(image.height == height)
 
         width = 200
-        image = gen_image_pil(width=width)
+        image = gen_image_pil(image_max_width=width)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.width == width)
 
         height = 200
-        image = gen_image_pil(height=height)
+        image = gen_image_pil(image_max_height=height)
         self.assertTrue(isinstance(image, Image.Image))
         self.assertTrue(image.height == height)
 

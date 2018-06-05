@@ -15,8 +15,6 @@ sys.path.append(os.path.join(BASE_DIR, '..', 'proto'))
 import get_image_pb2
 
 
-
-
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [(r"/", MainHandler)]
