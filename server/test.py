@@ -2,16 +2,16 @@
 import unittest
 
 import io
+import os
+import sys
 import tornado
+import tornado.web
+import tornado.testing
 from PIL import Image
 from tornado import websocket
-from tornado.testing import AsyncHTTPTestCase
-
 from generators import gen_image_from_file, gen_image_pil
 from tornado_server import MainHandler
 
-import os
-import sys
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(BASE_DIR, '..', 'proto'))
 import get_image_pb2

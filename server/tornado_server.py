@@ -6,6 +6,8 @@ import logging
 import socket
 import tornado.websocket
 import tornado.ioloop
+import tornado.web
+import tornado.options
 from tornado.options import define, options
 from generators import gen_image_pil, gen_image_from_file
 from PIL.ImageOps import grayscale
@@ -86,7 +88,7 @@ if __name__ == "__main__":
     tornado.options.parse_command_line()
     app = Application()
     app.listen(options.port)
-    myip = socket.gethostbyname(socket.gethostname())
-    logging.info("\n\n*** Websocket Server Started at %s ***\n" % myip)
+    my_ip = socket.gethostbyname(socket.gethostname())
+    logging.info("\n\n*** Websocket Server Started at %s ***\n" % my_ip)
     tornado.ioloop.IOLoop.instance().start()
 
